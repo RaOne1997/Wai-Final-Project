@@ -1,18 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ContactpageComponent } from './contactpage/contactpage.component';
+import { ProductComponent } from './product/product.component';
+import { CarrersComponent } from './carrers/carrers.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { CityMasterComponent } from './city-master/city-master.component';
+import { CityMasterDetailsComponent } from './city-master-details/city-master-details.component';
+import { Citymasterservices } from './Services/CityMasterservices';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    ContactpageComponent,
+    ProductComponent,
+    CarrersComponent,
+    AboutUsComponent,
+    CityMasterComponent,
+    CityMasterDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+     HttpClientModule,
+    FormsModule,
+    NgxPaginationModule
+ 
   ],
-  providers: [],
+  providers: [Citymasterservices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

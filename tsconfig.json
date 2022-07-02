@@ -21,6 +21,10 @@
     "lib": [
       "es2020",
       "dom"
+    ],
+    "typeRoots": ["node_module/@type",
+      "node_module/@angular",
+      "node_module/angular/common/http"
     ]
   },
   "angularCompilerOptions": {
