@@ -10,9 +10,11 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 import { ProductComponent } from './product/product.component';
 import { CarrersComponent } from './carrers/carrers.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { CityMasterComponent } from './city-master/city-master.component';
-import { CityMasterDetailsComponent } from './city-master-details/city-master-details.component';
+
+import { CityMasterDetailsComponent } from './City/city-master-details/city-master-details.component';
 import { Citymasterservices } from './Services/CityMasterservices';
+import { RoomMasterComponent } from './Room/room-master/room-master.component';
+import { CityMasterComponent } from './City/city-master/city-master.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { Citymasterservices } from './Services/CityMasterservices';
     CarrersComponent,
     AboutUsComponent,
     CityMasterComponent,
-    CityMasterDetailsComponent
+    CityMasterDetailsComponent,
+    RoomMasterComponent
   ],
   imports: [
     BrowserModule,

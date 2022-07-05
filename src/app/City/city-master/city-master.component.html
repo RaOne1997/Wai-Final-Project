@@ -1,0 +1,125 @@
+<div class="container-fluid">
+    <!-- start side bar -->
+    <div class="row">
+        <div class="col-2">
+            <div class="card">
+                <div class="row bg-primary">
+                    <div class="col-12 ">
+                        <span class="text-light pointer" (click)="hideadd(1)"> Add City </span>
+                    </div>
+
+                    <div class="col-12">
+                        <span class="text-light pointer" (click)="hideadd(2)"> Display </span>
+                    </div>
+
+                    <div class="col-12">
+                        <span class="text-light pointer" (click)="hideadd(1)"> Details </span>
+                    </div>
+
+                    <div class="col-12">
+                        <span class="text-light pointer" (click)="hideadd(1)"> Edit </span>
+                    </div>
+
+                    <div class="col-12">
+                        <span class="text-light pointer" (click)="hideadd(3)"> Delete </span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end   side bar -->
+
+        </div>
+        <div class="col-10 mt-5">
+            <div [ngSwitch]="flag">
+                <div *ngSwitchCase="2">
+
+                    <div class="shadowsss ">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="bg-primary text-white HEader"><span class="MAsterName h5">City</span></div>
+                                <div class="scrollbar scrollbar-primary">
+                                    <div class="force-overflow">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th> <small>CityName</small> </th>
+                                                    <th> <small> stateName </small></th>
+                                                    <th> <small> Action </small></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr *ngFor="let city of citys">
+                                                    <td>{{city.cityName}}</td>
+                                                    <td>{{city.state.stateName}}</td>
+                                                    <td><a [routerLink]="['detail',city.id]">Details</a></td>
+                                                 
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-5 w-25">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="1">Two is Selected
+
+                    Select Country : <select #contery (change)="getstateByCont(contery.value)">
+                        <option value="0">--Select--</option>
+                        <option *ngFor="let sountry of country" value={{sountry.id}}>{{sountry.countryName}}</option>
+                    </select>
+
+
+                    <form action="" method="post" #form="ngForm" (ngSubmit)="addCity()" [hidden]="hidess">
+                        <table class="table table-bordered table-striped  table-hover">
+                            <thead>
+                                <tr>
+                                    <th>City Name</th>
+                                    <td><input type="text" name="cityname" id="cityname" [(ngModel)]="city.cityname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>State Code</th>
+                                    <td>
+                                        <!-- #stateRefID (change)="changestate(stateRefID.value)" -->
+                                        <select id="stateRefID" name="stateRefID" [(ngModel)]="city.stateRefID">
+                                            <option value="0">--Select--</option>
+                                            <option *ngFor="let sountry of states" value={{sountry.id}}>
+                                                {{sountry.stateName}}</option>
+                                        </select>
+
+                                        <!-- <input type="number" name="stateRefID" id="stateRefID"
+                                            [(ngModel)]="city.stateRefID"> -->
+                                    </td>
+                                </tr>
+
+                            </thead>
+                        </table>
+                        <button class="btn" type="submit">Update</button>
+                        <button class="btn" type="reset">go back</button>
+                    </form>
+                </div>
+
+                <div *ngSwitchCase="3">Two is Selected
+
+                     
+
+                           
+                               
+                               
+                       
+
+                       
+                 
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

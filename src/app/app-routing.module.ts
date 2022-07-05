@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CarrersComponent } from './carrers/carrers.component';
 
-import { CityMasterComponent } from './city-master/city-master.component';
-import { CityMasterDetailsComponent } from './city-master-details/city-master-details.component';
+import { CityMasterDetailsComponent } from './City/city-master-details/city-master-details.component';
+import { CityMasterComponent } from './City/city-master/city-master.component';
 
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductComponent } from './product/product.component';
+import { RoomMasterComponent } from './Room/room-master/room-master.component';
 
 const routes: Routes = [
   {
@@ -38,9 +39,8 @@ const routes: Routes = [
    ],
   },
   {
-    path:'details',
-    component:CityMasterDetailsComponent 
-     
+    path:'Room',
+    component:RoomMasterComponent 
    
   }
   

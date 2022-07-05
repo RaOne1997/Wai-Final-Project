@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col">
+        <div *ngIf="add;else other_content">
+            <table class="table table-bordered table-striped  table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{citydd.id}}</td>
+                    </tr>
+                    <tr>
+                        <th>City Name</th>
+                        <td>{{citydd.cityname}}</td>
+                    </tr>
+                    <tr>
+                        <th>State Name</th>
+                        <td>{{citydd.statename}}</td>
+                    </tr>
+                    <tr>
+                        <th>State Code</th>
+                        <td>{{citydd.stateRefID}}</td>
+                    </tr>
+
+                </thead>
+            </table>
+            <button class="btn" (click)="update()">Edit</button>
+            <button class="btn" (click)="deleteCity()">Delete</button>
+        </div>
+
+        <!-- <div class="col">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png" alt="">
+
+
+</div> -->
+
+        <ng-template #other_content>
+            <form action="" method="post" #form="ngForm">
+                <table class="table table-bordered table-striped  table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <td><input type="text" name="id" id="id"  [(ngModel)]="citydd.id"></td>
+                        </tr>
+                        <tr>
+                            <th>City Name</th>
+                            <td><input type="text" name="cityname" id="cityname"  [(ngModel)]="citydd.cityname"></td>
+                        </tr>
+                        <tr>
+                            <th>State Name</th>
+                            <td><input type="text" name="" id="" ></td>
+                        </tr>
+                        <tr>
+                            <th>State Code</th>
+                            <td><input type="text" name="stateRefID" id="stateRefID" [(ngModel)]="citydd.stateRefID" ></td>
+                        </tr>
+
+                    </thead>
+                </table>
+                <button class="btn" (click)="updatedata()">Update</button>
+                <button class="btn" (click)="update()">go back</button>
+            </form>
+
+        </ng-template>
+    </div>

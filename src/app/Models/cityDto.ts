@@ -1,5 +1,7 @@
 export interface cityDto
 {
     cityname:string,
-    stateRefID :number    
+    statename:string,
+    stateRefID :number ,
+    id:number   
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CityMaster } from '../Models/CityModels';
+
 import { Citymasterservices } from '../Services/CityMasterservices';
 
 @Component({
@@ -18,24 +18,11 @@ export class CarrersComponent implements OnInit {
   constructor( private bookService: Citymasterservices) { }
 
   ngOnInit(): void {
-   this.fetchPosts()
+
   }
 
 
-  fetchPosts(){
-    this.bookService.getBooks()
-    .subscribe({
-      next:(city)=>{
-        this.citys = city;
   
-        console.log(city);
-    },
-    error:(response)=>{
-      console.log(response)
-    }
-  
-    })
-  }
   // onTableDataChange(event: any) {
   //   this.page = event;
   //   this.fetchPosts();

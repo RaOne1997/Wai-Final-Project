@@ -26,14 +26,14 @@ import { Country } from "./Country"
  public set stateID(value: string) {
     this._stateID = value;
  }
- public get Id(): number {
-    return this._Id;
+ public get id(): number {
+    return this._id;
  }
- public set Id(value: number) {
-    this._Id = value;
+ public set id(value: number) {
+    this._id = value;
  }
  constructor(
-  private _Id: number,
+  private _id: number,
     
     private _stateID: string,
     
