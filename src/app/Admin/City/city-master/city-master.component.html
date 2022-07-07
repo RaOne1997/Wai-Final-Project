@@ -51,7 +51,7 @@
 
                                                 <tr *ngFor="let city of citys">
                                                     <td>{{city.cityName}}</td>
-                                                    <td>{{city.state.stateName}}</td>
+                                                    <td>{{city.stateName}}</td>
                                                     <td><a [routerLink]="['detail',city.id]">Details</a></td>
                                                  
                                                 </tr>

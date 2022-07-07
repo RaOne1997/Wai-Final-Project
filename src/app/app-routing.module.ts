@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CityMasterDetailsComponent } from './Admin/City/city-master-details/city-master-details.component';
+import { CityMasterComponent } from './Admin/City/city-master/city-master.component';
+import { RoomDetailComponent } from './Admin/Room/room-detail/room-detail.component';
+import { RoomMasterComponent } from './Admin/Room/room-master/room-master.component';
 import { CarrersComponent } from './carrers/carrers.component';
 
-import { CityMasterDetailsComponent } from './City/city-master-details/city-master-details.component';
-import { CityMasterComponent } from './City/city-master/city-master.component';
+
+
 
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductComponent } from './product/product.component';
-import { RoomMasterComponent } from './Room/room-master/room-master.component';
+
 
 const routes: Routes = [
   {
@@ -42,6 +46,10 @@ const routes: Routes = [
     path:'Room',
     component:RoomMasterComponent 
    
+  },
+  {
+    path:'roomdetails/:id',
+    component:RoomDetailComponent
   }
   
   ];

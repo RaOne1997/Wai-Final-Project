@@ -1,0 +1,11 @@
+.dropdown:hover .adminhover {
+    display: block;
+    margin-top: 0; 
+ }
+
+
+ .dropdown-divider{
+  color: lightgray  !important;
+    height: 3px;
+
+ }

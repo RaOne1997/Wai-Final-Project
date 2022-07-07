@@ -1,0 +1,85 @@
+<p>room-detail works!</p>
+<div class="container">
+
+    <table class="table table-bordered  table-striped table-hover " [hidden]="hideafter">
+        <tbody>
+            <tr class="hover">
+                <td>RoomNumber</td>
+                <td>{{rooms.roomNumber}}</td>
+            </tr>
+            <tr class="hover">
+                <td>RoomTypeRefID</td>
+                <td>{{rooms.roomTypeRefID}}</td>
+            </tr>
+            <tr class="hover">
+                <td>Images</td>
+                <td> <img src="{{'data:image/jpeg;base64,'+ rooms.roomImage}}" alt="" style="height: 150px;"
+                        class="img-fluid rounded-top"></td>
+            </tr>
+            <tr class="hover">
+                <td>RoomLevel</td>
+                <td>{{rooms.roomLevel}}</td>
+            </tr>
+            <tr class="hover">
+                <td>RoomPrice</td>
+                <td>{{rooms.roomPrice}}</td>
+            </tr>
+            <tr class="hover">
+                <td>Description</td>
+                <td>{{rooms.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn" (click)="goback()" [hidden]="hideafter">goback</button>
+    <button class="btn" (click)="gotoUpdate()" [hidden]="hideafter">Update</button>
+
+    <form [formGroup]="fileForm" [hidden]="hideupdate">
+        <table class="table table-bordered  table-striped table-hover ">
+            <tbody>
+                <tr class="hover">
+                    <td>RoomNumber</td>
+                    <td> <input type="text" class="form-control" formControlName="RoomNumber"
+                            placeholder="Enter roomNumber" name="RoomNumber"></td>
+                </tr>
+                <tr class="hover">
+                    <td>RoomTypeRefID</td>
+                    <td><input type="number" class="form-control" formControlName="RoomTypeRefID"
+                            placeholder="Enter RoomTypeRefID" name="RoomTypeRefID"></td>
+                </tr>
+                <tr class="hover">
+                    <td>Images</td>
+                    <td>
+                        <input type="file" id="uplode" (change)="handleFileInput($event)" hidden
+                            name="RoomImagesUplode">
+                        <label for="uplode" style="cursor: pointer;"><img
+                                src="{{'data:image/jpeg;base64,'+ rooms.roomImage}}" alt="NOImage" style="height: 150px;"
+                                class="img-fluid rounded-top"></label>
+                    </td>
+                <tr class="hover">
+                    <td>RoomLevel</td>
+                    <td> <input type="number" class="form-control" formControlName="RoomLevel"
+                            placeholder="Enter RoomLevel" name="RoomLevel"></td>
+                </tr>
+                <tr class="hover">
+                    <td>RoomPrice</td>
+                    <td> <input type="number" class="form-control" formControlName="RoomPrice"
+                            placeholder="Enter RoomPrice" name="RoomPrice"></td>
+                </tr>
+                <tr class="hover">
+                    <td>Description</td>
+                    <td><textarea type="" class="form-control" formControlName="description"
+                            placeholder="Enter description" name="description"> 
+                            </textarea>
+                        
+                        
+                        </td>
+                </tr>
+
+
+            </tbody>
+            <button class="btn" (click)="goback()" >goback</button>
+            <button class="btn" (click)="gotoUpdate()" >Update</button>
+        </table>
+    </form>
+
+</div>

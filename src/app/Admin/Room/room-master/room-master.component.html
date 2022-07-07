@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <!-- start side bar -->
+    <div class="row">
+        <div class="col-2 mt-5">
+            <div class="card ">
+
+                
+                <button class=" btn mb-5 pointer" (click)="hideadd(2)"> Display </button>
+                <button class="btn  pointer" (click)="hideadd(1)"> Add City </button>
+            </div>
+
+        </div>
+
+        <div class="col-10 mt-5">
+            <div [ngSwitch]="flag">
+                <div *ngSwitchCase="1">
+                    <form [formGroup]="fileForm" (ngSubmit)="AddRoom()">
+                        <div class=" ms-5 w-50">
+                            <div class="form-group">
+                                <label for="myFile">File:</label>
+                                <input type="file" class="form-control" (change)="handleFileInput($event)"
+                                    name="RoomImagesUplode">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">RoomNumber:</label>
+                                <input type="text" class="form-control" formControlName="RoomNumber"
+                                    placeholder="Enter alternate text" name="RoomNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">RoomTypeRefID:</label>
+                                <input type="number" class="form-control" formControlName="RoomTypeRefID"
+                                    placeholder="Enter RoomTypeRefID" name="RoomTypeRefID">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">RoomLevel:</label>
+                                <input type="number" class="form-control" formControlName="RoomLevel"
+                                    placeholder="Enter RoomLevel" name="RoomLevel">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Description:</label>
+                                <input type="text" class="form-control" formControlName="description"
+                                    placeholder="Enter description" name="description">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">RoomPrice:</label>
+                                <input type="number" class="form-control" formControlName="RoomPrice"
+                                    placeholder="Enter RoomPrice" name="RoomPrice">
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div *ngSwitchCase="2">
+                    <div class=" ms-5 ">
+                        <div *ngFor="let room of roomModel" (click)="details(room.id)">
+                            <div class="card mb-3 me-5 border" style="height: 30%;">
+                                <div class="row g-0">
+                                    <div class="col-3 ">
+                                        <img src="{{'data:image/jpeg;base64,'+ room.roomImage}}" alt=""
+                                            style="height: 150px;" class="img-fluid rounded-top">
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Room Type {{room.roomTypeRefID}}</h5>
+                                            <p class="card-text">{{room.description}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 bg-success rounded-end  ">
+
+                                        <p class="card-text text-center"> &#x20b9;{{room.roomPrice}}</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                ago</small>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div *ngSwitchCase="3">
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

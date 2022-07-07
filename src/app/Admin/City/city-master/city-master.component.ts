@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { cityDto } from 'src/app/Models/cityDto';
+import { cityDto } from 'src/app/Models/City/cityDto';
 
 import { state } from 'src/app/Models/City/State';
 import { Citymasterservices } from 'src/app/Services/CityMasterservices';
@@ -15,7 +15,7 @@ import { Country } from 'src/app/Models/City/Country';
   styleUrls: ['./city-master.component.css']
 })
 export class CityMasterComponent implements OnInit {
-  citys!: CityMaster[];
+   citys: CityMaster[]=[];
   country!: Country[];
   states!: state[]
   hdie: boolean = false
@@ -26,7 +26,8 @@ export class CityMasterComponent implements OnInit {
     id: 0,
     statename: ''
   };
-  abc: string = 'disabled';
+
+
   flag!: number
   hidess: boolean = true;
   constructor(private bookService: Citymasterservices, private route: ActivatedRoute) {
@@ -51,7 +52,8 @@ export class CityMasterComponent implements OnInit {
       .subscribe({
         next: (city) => 
         {
-          this.citys = city;
+          console.log(city)
+           this.citys = city;
         },
         error: (response) => {
           console.log(response)

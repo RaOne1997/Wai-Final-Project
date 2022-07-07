@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
-import { cityDto } from '../../Models/cityDto';
 
-import { state } from '../../Models/City/State';
-import { Citymasterservices } from '../../Services/CityMasterservices';
 import { CityMaster } from 'src/app/Models/City/CityModels';
+import { cityDto } from 'src/app/Models/City/cityDto';
+import { state } from 'src/app/Models/City/State';
+import { Citymasterservices } from 'src/app/Services/CityMasterservices';
 
 @Component({
   selector: 'app-city-master-details',
@@ -37,10 +37,7 @@ export class CityMasterDetailsComponent implements OnInit {
   Getdatabyid(id: number) {
     this.bookService.CityByID(id).subscribe({
       next: (city) => {
-        this.citydd.cityname = city.cityName
-        this.citydd.stateRefID = city.stateRefID
-        this.citydd.id = city.id
-        this.citydd.statename = city.state.stateName
+     this.citys=city
         console.log(city)
       }
     })
@@ -57,9 +54,9 @@ export class CityMasterDetailsComponent implements OnInit {
       cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.value) {
-        this.bookService.deleteCity(this.citydd.id).subscribe({
+        this.bookService.deleteCity(this.citys.id).subscribe({
           next: (returncity) =>
-            console.log(this.citydd)
+            console.log(this.citys)
         });
         Swal.fire(
           'delete!',
