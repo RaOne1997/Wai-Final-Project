@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CityMasterDetailsComponent } from './Admin/City/city-master-details/city-master-details.component';
 import { CityMasterComponent } from './Admin/City/city-master/city-master.component';
+import { HotelMasterComponent } from './Admin/Hotel/hotel-master/hotel-master.component';
+import { RoombyhotelComponent } from './Admin/Hotel/roombyhotel/roombyhotel.component';
 import { RoomDetailComponent } from './Admin/Room/room-detail/room-detail.component';
 import { RoomMasterComponent } from './Admin/Room/room-master/room-master.component';
 import { CarrersComponent } from './carrers/carrers.component';
@@ -50,8 +52,15 @@ const routes: Routes = [
   {
     path:'roomdetails/:id',
     component:RoomDetailComponent
+  },
+  {
+    path:'Hotel',
+    component:HotelMasterComponent
+  },
+  {
+    path:'Roombyhotel',
+    component:RoombyhotelComponent
   }
-  
   ];
 
 @NgModule({

@@ -1,41 +1,39 @@
-<!DOCTYPE html>
-<html>
-	
-<head>
-	<title>CSS | scrollbar-width</title>
-	
-	<style>
+<form #form="ngForm" method="post" (submit)="serchfligght()">
 
-		.scrollbar-thin {
-			scrollbar-width: thin;
-			background-color: lightgreen;
-			height: 150px;
-			width: 200px;
-			overflow-y: scroll;
-		}
-	</style>
-</head>
+    <div class="row">
+        <h2>Book Flights, Hotels and Holiday Packages</h2>
+        <hr />
 
-<body>
-	<h1 style="color: green">
-		GeeksforGeeks
-	</h1>
-	
-	<b>CSS | scrollbar-width</b>
-	
-	
-<p>scrollbar-width: thin</p>
+        <div class="col-md-3">
 
-	
-	<div class="scrollbar-thin">
-		GeeksforGeeks is a computer science
-		portal with a huge variety of well
-		written and explained computer science
-		and programming articles, quizzes and
-		interview questions. The portal also
-		has dedicated GATE preparation and
-		competitive programming sections.
-	</div>
-</body>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input id="LocationFrom" name="LocationFrom" class="form-control" autocomplete="location from" aria-required="true" />
+                <label for="LocationFrom">Depart From</label>
+            </div>
 
-</html>
+            <div class="form-floating">
+                <input id="DepartureDate" name="DepartureDate" type="date" class="form-control" autocomplete="Departure Date" aria-required="true" />
+                <label for="DepartureDate">Depart Date</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+            <div class="form-floating mb-3">
+                <input id="LocationTo" name="LocationTo" class="form-control" autocomplete="location to" aria-required="true" />
+                <label for="LocationTo">Going To</label>
+            </div>
+
+            <div class="form-floating">
+                <input id="ReturnDate" name="ReturnDate" type="date" class="form-control" autocomplete="Return Date" aria-required="true" />
+                <label for="ReturnDate">Return Date</label>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <button type="submit" class="form-control btn btn-primary">Search Flight</button>
+        </div>
+    </div>
+</form>

@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { cityDto } from 'src/app/Models/City/cityDto';
 
-import { state } from 'src/app/Models/City/State';
+
 import { Citymasterservices } from 'src/app/Services/CityMasterservices';
 import Swal from 'sweetalert2';
 import { CityMaster } from 'src/app/Models/City/CityModels';
 import { Country } from 'src/app/Models/City/Country';
+import { Dropdown } from 'src/app/Models/City/Dropdown';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { Country } from 'src/app/Models/City/Country';
 export class CityMasterComponent implements OnInit {
    citys: CityMaster[]=[];
   country!: Country[];
-  states!: state[]
+  dropdown :Dropdown[]=[]
   hdie: boolean = false
   hide2: boolean = false
   city: cityDto = {
@@ -71,9 +72,9 @@ export class CityMasterComponent implements OnInit {
       console.log(s)
       this.bookService.getBycont(Number(s))
         .subscribe({
-          next: (states) => {
-            this.states = states;
-            console.log(this.states);
+          next: (dropdown) => {
+            this.dropdown = dropdown;
+            console.log(dropdown);
           },
           error: (response) => {
             console.log(response)

@@ -89,8 +89,8 @@
                                         <!-- #stateRefID (change)="changestate(stateRefID.value)" -->
                                         <select id="stateRefID" name="stateRefID" [(ngModel)]="city.stateRefID">
                                             <option value="0">--Select--</option>
-                                            <option *ngFor="let sountry of states" value={{sountry.id}}>
-                                                {{sountry.stateName}}</option>
+                                            <option *ngFor="let sountry of dropdown" value={{sountry.id}}>
+                                                {{sountry.text}}</option>
                                         </select>
 
                                         <!-- <input type="number" name="stateRefID" id="stateRefID"

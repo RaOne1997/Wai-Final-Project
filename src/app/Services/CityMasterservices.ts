@@ -9,6 +9,7 @@ import { cityDto } from "../Models/City/cityDto";
 import { state } from "../Models/City/State";
 import { CityMaster } from "../Models/City/CityModels";
 import { Country } from "../Models/City/Country";
+import { Dropdown } from "../Models/City/Dropdown";
 
 
 @Injectable({providedIn:'root'})
@@ -17,11 +18,11 @@ export class Citymasterservices{
   baseApiUrl:string = environment.baseApiUrl;
   constructor(private http:HttpClient){}
   GetallCity():Observable<CityMaster[]>{
-    return this.http.get<CityMaster[]>(this.baseApiUrl+'/api/CityMasterdtoes')
+    return this.http.get<CityMaster[]>(this.baseApiUrl+'/api/CityMasterdtoes/GetCityMasterdto')
   }
   CityByID(id:number):Observable<CityMaster>{
     console.log("services" +id)
-    return this.http.get<CityMaster>(this.baseApiUrl+'/api/CityMasterdtoes/'+id)
+    return this.http.get<CityMaster>(this.baseApiUrl+'/api/CityMasterdtoes/GetCityMasterdto/'+id)
   }
   UpdateCity(city:cityDto):Observable<CityMaster>
   {
@@ -37,11 +38,11 @@ export class Citymasterservices{
     return this.http.get<Country[]>(this.baseApiUrl+'/api/Countries')
   }
 
-  getBycont(id:number):Observable<state[]>
+  getBycont(id:number):Observable<Dropdown[]>
   {
     console.log("getBycont"+id)
    
-    return this.http.get<state[]>(this.baseApiUrl+'/api/StateDTOes/GetStateBycont/'+id)
+    return this.http.get<Dropdown[]>(this.baseApiUrl+'/api/CityMasterdtoes/Get02/'+id)
   }
 
   deleteCity(id:number):Observable<state[]>

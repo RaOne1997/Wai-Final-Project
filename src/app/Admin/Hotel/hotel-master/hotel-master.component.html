@@ -1,1 +1,46 @@
-<p>hotel-master works!</p>
+<div>&nbsp;</div>
+
+
+<Button class="btn " (click)="viewroom()">View Room</Button>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>id </th>
+            <th>name </th>
+            <th>hotelId </th>
+            <th>hotelImage </th>
+            <th>hotelRating </th>
+            <!-- <th>checkout </th>
+            <th>checkin </th> -->
+            <th>city </th>
+            <th>staterefID </th>
+            <th>address </th>
+            <th>landmark </th>
+            <th>pincode </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of hotelModel">
+            <td>{{e.id }}</td>
+            <td>{{e.name }}</td>
+            <td>{{e.hotelId }}</td>
+            <td> <img src="{{'data:image/jpeg;base64,'+ e.hotelImage}}" alt="" style="height: 150px;"
+                    class="img-fluid rounded-top"></td>
+            <td>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </td>
+            <td>{{e.city }}</td>
+            <td>{{e.staterefID}} +</td>
+            <td>{{e.address}} </td>
+            <td>{{e.landmark}} </td>
+            <td>{{e.pincode }}</td>
+
+        </tr>
+    </tbody>
+</table>

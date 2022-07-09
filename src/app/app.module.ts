@@ -17,6 +17,7 @@ import { RoomMasterComponent } from './Admin/Room/room-master/room-master.compon
 import { RoomMasterdetailsComponent } from './Admin/Room/room-masterdetails/room-masterdetails.component';
 import { Citymasterservices } from './Services/CityMasterservices';
 import { HotelMasterComponent } from './Admin/Hotel/hotel-master/hotel-master.component';
+import { RoombyhotelComponent } from './Admin/Hotel/roombyhotel/roombyhotel.component';
 
 @NgModule({
   declarations: [
@@ -31,15 +32,16 @@ import { HotelMasterComponent } from './Admin/Hotel/hotel-master/hotel-master.co
     RoomMasterComponent,
     RoomMasterdetailsComponent,
     RoomDetailComponent,
-    HotelMasterComponent
+    HotelMasterComponent,
+    RoombyhotelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      HttpClientModule,
     FormsModule,ReactiveFormsModule,
-
     NgxPaginationModule
+  
  
   ],
   providers: [Citymasterservices],

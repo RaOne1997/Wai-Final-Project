@@ -60,8 +60,7 @@ export class RoomMasterComponent implements OnInit {
     formData.append('RoomPrice', String(this.fileForm.value.RoomPrice));
  
       this.roomService.Addroom(formData);
-      
-   
+
 
 
   }
