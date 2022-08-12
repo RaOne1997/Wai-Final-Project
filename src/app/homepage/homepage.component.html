@@ -1,39 +1,174 @@
-<form #form="ngForm" method="post" (submit)="serchfligght()">
+<div style="height: 500px; background-image: url(../../assets/Images/backimg.jpg);">
+    <div class="container ">
+        <div class="row ">
+            <div class="col ">
+                <div class="card shadow-lg  mt-5" style="height: 350px;">
+                    <div class="card-header border-0 bb">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox1" name="triptype"
+                                value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">One Way</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox2" name="triptype"
+                                value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Round Trip</label>
+                        </div>
+                    </div>
+                    <form #form="ngForm" method="post" (submit)="serchfligght(from.value,to.value,dept.value)">
+                        <div class="card-body">
+                            <div class="card cardborder">
+                                <h5 class="card-header"></h5>
+                                <div class="card-body">
 
+                                    <div class="row">
+
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <input id="LocationFrom" name="LocationFrom" class="form-control" #from
+                                                    autocomplete="location from" aria-required="true" />
+                                                <label for="LocationFrom">Depart From</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <div class="form-floating mb-3">
+                                                    <input id="LocationTo" name="LocationTo" class="form-control" #to
+                                                        autocomplete="location to" aria-required="true" />
+                                                    <label for="LocationTo">Going To</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input id="DepartureDate" name="DepartureDate" type="date" #dept
+                                                    class="form-control" autocomplete="Departure Date"
+                                                    aria-required="true" />
+                                                <label for="DepartureDate">Depart Date</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3">
+                                                <div class="form-floating">
+                                                    <input id="ReturnDate" name="ReturnDate" type="date"
+                                                        class="form-control" autocomplete="Return Date"
+                                                        aria-required="true" />
+                                                    <label for="ReturnDate">Return Date</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-1  text-muted" style="width:80px ;">
+                                    <label for="" class="mt-3" style="font-size: 12px;   line-height: normal;">
+                                        Select A <br>
+                                        Fare Type
+                                    </label>
+                                </div>
+                                <div class="col-1">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" id="RegularFares"
+                                            name="FareType" value="option1">
+                                        <label class="form-check-label fw-bold mt-3"
+                                            style="font-size:15px; line-height: normal;" for="RegularFares">
+                                            <small>Regular Fares</small>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-2 " style="width:170px ;">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" id="ArmedForces"
+                                            name="FareType" value="option2">
+                                        <label class="form-check-label fw-bold mt-3"
+                                            style="font-size:15px; line-height: normal;" for="ArmedForces">
+                                            <small>Armed Forces
+                                                Fares NEW
+                                            </small>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-1">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" id="Student" name="FareType"
+                                            value="option1">
+                                        <label class="form-check-label fw-bold mt-3"
+                                            style="font-size:15px; line-height: normal;" for="Student">
+                                            <small> Student
+                                                Fares</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2" style="width:170px ;">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" id="Senior" name="FareType"
+                                            value="option2">
+                                        <label class="form-check-label fw-bold mt-3"
+                                            style="font-size:15px; line-height: normal;" for="Senior">
+                                            <small>Senior Citizen
+                                                Fares
+                                            </small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2" style="width:170px ;">
+                                    <button type="submit" class="form-control btn btn-primary">Search Flight</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="searchflig.length != 0; else elseBlock">
+    <<app-carrers [flights]="searchflig"></app-carrers> 
+</div>
+<ng-template #elseBlock>
+
+</ng-template> -->
+
+
+
+
+<div class="container">
     <div class="row">
-        <h2>Book Flights, Hotels and Holiday Packages</h2>
-        <hr />
+        <div class="col">
+            <div class="card cardborder mt-5 mb-5 ">
+                <span class="card-header fw-b">Offers</span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 mb-2" *ngFor="let v of string">
+                            <div class="card mb-3 inndercard">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="../../assets/Images/logo.png" class="img-fluid  rounded-start"
+                                            alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
 
-        <div class="col-md-3">
-
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating mb-3">
-                <input id="LocationFrom" name="LocationFrom" class="form-control" autocomplete="location from" aria-required="true" />
-                <label for="LocationFrom">Depart From</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-floating">
-                <input id="DepartureDate" name="DepartureDate" type="date" class="form-control" autocomplete="Departure Date" aria-required="true" />
-                <label for="DepartureDate">Depart Date</label>
-            </div>
-        </div>
-        <div class="col-md-3">
-
-            <div class="form-floating mb-3">
-                <input id="LocationTo" name="LocationTo" class="form-control" autocomplete="location to" aria-required="true" />
-                <label for="LocationTo">Going To</label>
-            </div>
-
-            <div class="form-floating">
-                <input id="ReturnDate" name="ReturnDate" type="date" class="form-control" autocomplete="Return Date" aria-required="true" />
-                <label for="ReturnDate">Return Date</label>
-            </div>
-        </div>
-        <div></div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-6">
-            <button type="submit" class="form-control btn btn-primary">Search Flight</button>
         </div>
     </div>
-</form>
+</div>

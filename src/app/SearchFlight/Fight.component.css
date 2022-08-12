@@ -1,0 +1,18 @@
+.duration {
+    border-left: 1px solid gray;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.flight-time {
+    font-weight: bold;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.bott{
+
+min-height:600px;
+}

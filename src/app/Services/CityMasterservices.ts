@@ -46,7 +46,7 @@ export class Citymasterservices{
   }
 
   deleteCity(id:number):Observable<state[]>
-  {
+  { 
     
       return this.http.delete<state[]>(this.baseApiUrl+'/api/CityMasterdtoes/'+id)
   }

@@ -1,0 +1,90 @@
+<div class="container bott"  >
+
+    <h2>Book Flights, Hotels and Holiday Packages</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-5">
+            <div>
+                <span>Depart</span>
+                <span>Arrive</span>
+                <span>Duration</span>
+                <span>Price Per Adult</span>
+            </div>
+         
+            <div *ngIf="flights.length != 0; else elseBlock">
+                <div class="card mb-3 shadow" *ngFor="let flight of flights">
+                    <div class="card-body" (click)="displayid(flight.id)">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="{{'data:image/jpeg;base64,'+ flight.flightlogo}}" alt="Airline Logo" width="100"
+                        height="50" /> 
+                                <!-- <img src="{{flight.flightlogo}}" alt="Airline Logo" width="60" height="50" />-->
+                                <span class="ms-2">{{flight.flightName}}</span> 
+                            </div>
+                            <div class="col-12 mt-3">
+                                <span class="flight-time">{{flight.departureDate | date: 'shortTime'}}</span>
+                                <span class="blockquote-footer"></span>
+                                <span class="flight-time">{{flight.arrivalDate | date: 'shortTime'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="card mb-3 shadow">
+                    <div class="card-body">
+                        flights
+                        No Departure flights found for this search criteria
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+
+
+        <div class="col-md-5">
+            <div>
+                <span>Depart</span>
+                <span>Arrive</span>
+                <span>Duration</span>
+                <span>Price Per Adult</span>
+            </div>
+
+
+            <div *ngIf="flights.length != 0; else elseBlock">
+                <div class="card mb-3 shadow" *ngFor="let flight of flights">
+                    <div class="card-body" (click)="displayid(flight.id)">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="{{'data:image/jpeg;base64,'+ flight.flightlogo}}" alt="Airline Logo" width="100"
+                        height="50" />
+                              <!--   <img src="{{flight.flightlogo}}" alt="Airline Logo" width="60" height="50" /> -->
+                                <span class="">{{flight.flightName}}</span>
+                            </div>
+                            <div class="col-12 mt-3">
+
+                                <span class="flight-time">{{flight.departureDate | date: 'shortTime'}}</span>
+                                <span class="blockquote-footer"></span>
+                                <span class="flight-time">{{flight.arrivalDate | date: 'shortTime'}}</span>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="card mb-3 shadow">
+                    <div class="card-body">
+                        flights
+                        No Departure flights found for this search criteria
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

@@ -7,7 +7,7 @@ import { HotelMasterComponent } from './Admin/Hotel/hotel-master/hotel-master.co
 import { RoombyhotelComponent } from './Admin/Hotel/roombyhotel/roombyhotel.component';
 import { RoomDetailComponent } from './Admin/Room/room-detail/room-detail.component';
 import { RoomMasterComponent } from './Admin/Room/room-master/room-master.component';
-import { CarrersComponent } from './carrers/carrers.component';
+import { FlightComponent } from './SearchFlight/Flight.component';
 
 
 
@@ -15,13 +15,15 @@ import { CarrersComponent } from './carrers/carrers.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductComponent } from './product/product.component';
+import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
 
 
 const routes: Routes = [
   {
-    path:'Home',
+    path:'',
     component:HomepageComponent
   },
+
   {
     path:'ContactUs',
     component:ContactpageComponent
@@ -35,8 +37,8 @@ const routes: Routes = [
     component:AboutUsComponent
   },
   {
-    path:'Carrers',
-    component:CarrersComponent
+    path:'Flight',
+    component:FlightComponent
   },
   {
     path:'CityMaster',
@@ -60,6 +62,10 @@ const routes: Routes = [
   {
     path:'Roombyhotel',
     component:RoombyhotelComponent
+  },
+  {
+    path:'FlightBooking/:ID',
+    component:BookingTicketComponent
   }
   ];
 
