@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { FlightBooking } from '../Models/FlightBooking';
+import { bookinginput } from '../Models/room/inputforn';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,9 @@ export class BookingFlightService {
     return this.http.get<FlightBooking[]>(this.baseApiUrl+'/api/FlightBookingDTOes')
   }
 
-  Getbyflight(id:number):Observable<FlightBooking[]>{
+  Getbyflight(id:number):Observable<bookinginput>{
     console.log("Servoices  : "+id)
-    return this.http.get<FlightBooking[]>(this.baseApiUrl+'/api/FlightBookingDTOes/GetFlightBookingShedul/'+id)
+    return this.http.get<bookinginput>(this.baseApiUrl+'/api/FlightBookingDTOes/GetFlighO/'+id)
   }
 
 }

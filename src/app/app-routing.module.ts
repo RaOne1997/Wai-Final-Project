@@ -16,6 +16,7 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductComponent } from './product/product.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
+import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
 
 
 const routes: Routes = [
@@ -65,7 +66,7 @@ const routes: Routes = [
   },
   {
     path:'FlightBooking/:ID',
-    component:BookingTicketComponent
+    component:PassengerInfoComponent
   }
   ];
 

@@ -23,6 +23,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
+import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { BookingTicketComponent } from './booking-ticket/booking-ticket.componen
     HeroesComponent,
     HeaderComponent,
     FooterComponent,
-    BookingTicketComponent
+    BookingTicketComponent,
+    PassengerInfoComponent
   ],
   imports: [
     BrowserModule,

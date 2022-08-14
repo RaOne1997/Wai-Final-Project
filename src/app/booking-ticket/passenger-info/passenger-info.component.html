@@ -1,0 +1,67 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <table class="table">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <th>BookingEmail</th>
+        <td> <input type="text" formControlName="CustomerContactEmail" class="form-control"></td>
+        <th>BookingMobile</th>
+        <td> <input type="text" formControlName="CustomerContactMobile" class="form-control"></td>
+        <th>FlightCode</th>
+        <td>{{flightB.flightCode}}</td>
+      </tr>
+      <tr>
+        <th>Number of Passenger</th>
+        <td><input type="text" formControlName="PassengerNameRecord" class="form-control"></td>
+        <th>Bording Airport </th>
+        <td>{{flightB.toairport}}
+          <br>
+          ({{flightB.toAirportCode}})
+        </td>
+
+
+        <th> Drop Airport</th>
+        <td>{{flightB.fromairport}}<br>
+          ({{flightB.fromAirportCode}})
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table class="table" formArrayName="FlightCustomerDetails">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+
+      </tr>
+      <tr *ngFor="let quantity of FlightCustomerDetails().controls; let i=index" [formGroupName]="i">
+        <td> <input type="text" formControlName="Name" class="form-control"></td>
+        <td> <input type="text" formControlName="Age" class="form-control"></td>
+        <td>
+       <select class="form-select" aria-label="Default select example" formControlName="Gender">
+              <option value=''>Open this select menu</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+    <button type="button" class="btn bg-primary  text-white" (click)="addQuantity()"> <i class="fa-solid fa-plus"></i>
+      &nbsp; Add</button>
+  </table>
+   <button type="submit" class="btn btn-success">Submit</button>
+</form>
+

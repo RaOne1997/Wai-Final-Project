@@ -1,33 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="card text-center">
-    <div class="card-header">Featured</div>
-    <div class="card-body" *ngFor="let flightBookings of flightBooking">
-    
-{{flightBookings.arrivalDate}}
-{{flightBookings.bookingTimeStamp}}
-{{flightBookings.customerContactEmail}}
-{{flightBookings.customerContactMobile}}
-{{flightBookings.departureDate}}
-{{flightBookings.flightCode}}
-<!-- {{}} -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div *ngFor="let passenger of flightBookings.flightCustomerDetails">
 
-  
-{{passenger.age}}
-{{passenger.flightBookingRefID}}
-{{passenger.gender}}
-{{passenger.id}}
-{{passenger.passengerName}}
+  <title>Document</title>
+</head>
 
-</div>
-{{flightBookings.flightScheduleRefId}}
-{{flightBookings.fromAirportCode}}
-{{flightBookings.fromairport}}
-{{flightBookings.passengerNameRecord}}
-{{flightBookings.toAirportCode}}
-{{flightBookings.toairport}}
+<body>
+  <div class="card " *ngFor="let flightBookings of flightBooking">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-4 airportcode mt-2">
+          {{flightBookings.fromAirportCode}} <br>
+        </div>
+        <div class="col-4">
+          <small>{{flightBookings.arrivalDate | date :'shortTime'}}</small>
+          -------------------
+          <small>{{flightBookings.departureDate | date :'shortTime'}}</small>
+        </div>
+        <div class="col-4 mt-2">
+          {{flightBookings.toAirportCode}} <br>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>BookingTime</th>
+            <td>{{flightBookings.bookingTimeStamp }}</td>
+            <th>BookingEmail</th>
+            <td>{{flightBookings.customerContactEmail}}</td>
+            <th>BookingMobile</th>
+            <td>{{flightBookings.customerContactMobile}}</td>
+            <th>FlightCode</th>
+            <td>{{flightBookings.flightCode}}</td>
+          </tr>
+          <tr>
+            <th>Number of Passenger</th>
+            <td>{{flightBookings.passengerNameRecord}}</td>
+            <th>Bording Airport </th>
+            <td>{{flightBookings.toairport}}
+              <br>
+              ({{flightBookings.toAirportCode}})
+            </td>
+
+
+            <th> Drop Airport</th>
+            <td>{{flightBookings.fromairport}}<br>
+              ({{flightBookings.fromAirportCode}})
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      Passenger Information
+      <table class="table">
+        <thead>
+          <th>Name </th>
+          <th>Age </th>
+          <th>Gender</th>
+        </thead>
+        <tbody *ngFor="let passenger of flightBookings.flightCustomerDetails; let indexOfelement=index">
+          <tr>
+            <!-- <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Action
+                </button>
+                <ul class="dropdown-menu text-center">
+                  <li><span class="btn w-100" >Edit</span></li>
+                  <li><span class="btn   w-100"  >Edit</span></li>
+                  <li><span class="btn  w-100">Edit</span></li>
+                 
+                              </ul>
+              </div>
+            </td> -->
+            <td>{{passenger.passengerName}}</td>
+            <td>{{passenger.age}}</td>
+            <td>{{passenger.gender}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
       <a href="#" class="btn btn-primary">Button</a>
     </div>
     <div class="card-footer text-muted">2 days ago</div>
   </div>
+</body>
+
+</html>

@@ -18,12 +18,12 @@ debugger
     this.route.params.subscribe(
       (parameters) => {
         console.log(parameters['ID'])
-        this.bookservic.Getbyflight(Number(parameters['ID'])).subscribe({
-          next: (result) => {
-                 this.flightBooking =result
-            console.log(this.flightBooking)
-          }
-        })
+        // this.bookservic.Getbyflight(Number(parameters['ID'])).subscribe({
+        //   next: (result) => {
+        //          this.flightBooking =result
+        //     console.log(this.flightBooking)
+        //   }
+        // })
       });
 
 
