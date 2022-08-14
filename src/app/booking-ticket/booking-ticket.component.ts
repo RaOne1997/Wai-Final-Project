@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FlightBooking } from '../Models/FlightBooking';
 import { BookingFlightService } from '../Services/booking-flight.service';
 
 @Component({
@@ -11,15 +12,16 @@ import { BookingFlightService } from '../Services/booking-flight.service';
 export class BookingTicketComponent implements OnInit {
 
   constructor(private bookservic: BookingFlightService, private route: ActivatedRoute) { }
-
+  flightBooking!:FlightBooking[]
   ngOnInit(): void {
 debugger
     this.route.params.subscribe(
       (parameters) => {
         console.log(parameters['ID'])
-        this.bookservic.Getbyflight(parameters['ID']).subscribe({
+        this.bookservic.Getbyflight(Number(parameters['ID'])).subscribe({
           next: (result) => {
-            console.log(result)
+                 this.flightBooking =result
+            console.log(this.flightBooking)
           }
         })
       });

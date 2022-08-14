@@ -1,1 +1,33 @@
-<p>booking-ticket works!</p>
+
+<div class="card text-center">
+    <div class="card-header">Featured</div>
+    <div class="card-body" *ngFor="let flightBookings of flightBooking">
+    
+{{flightBookings.arrivalDate}}
+{{flightBookings.bookingTimeStamp}}
+{{flightBookings.customerContactEmail}}
+{{flightBookings.customerContactMobile}}
+{{flightBookings.departureDate}}
+{{flightBookings.flightCode}}
+<!-- {{}} -->
+
+<div *ngFor="let passenger of flightBookings.flightCustomerDetails">
+
+  
+{{passenger.age}}
+{{passenger.flightBookingRefID}}
+{{passenger.gender}}
+{{passenger.id}}
+{{passenger.passengerName}}
+
+</div>
+{{flightBookings.flightScheduleRefId}}
+{{flightBookings.fromAirportCode}}
+{{flightBookings.fromairport}}
+{{flightBookings.passengerNameRecord}}
+{{flightBookings.toAirportCode}}
+{{flightBookings.toairport}}
+      <a href="#" class="btn btn-primary">Button</a>
+    </div>
+    <div class="card-footer text-muted">2 days ago</div>
+  </div>
