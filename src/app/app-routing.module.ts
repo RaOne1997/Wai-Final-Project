@@ -67,6 +67,10 @@ const routes: Routes = [
   {
     path:'FlightBooking/:ID',
     component:PassengerInfoComponent
+  },
+  {
+    path:'BookingTicket/:id',
+    component:BookingTicketComponent
   }
   ];
 

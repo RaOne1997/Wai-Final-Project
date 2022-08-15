@@ -11,13 +11,14 @@
         <td> <input type="text" formControlName="CustomerContactEmail" class="form-control"></td>
         <th>BookingMobile</th>
         <td> <input type="text" formControlName="CustomerContactMobile" class="form-control"></td>
-        <th>FlightCode</th>
-        <td>{{flightB.flightCode}}</td>
+       
       </tr>
       <tr>
-        <th>Number of Passenger</th>
+        <th>FlightCode</th>
+        <td>{{flightB.flightCode}}</td>
+        <!-- <th>Number of Passenger</th>
         <td><input type="text" formControlName="PassengerNameRecord" class="form-control"></td>
-        <th>Bording Airport </th>
+        <th>Bording Airport </th> -->
         <td>{{flightB.toairport}}
           <br>
           ({{flightB.toAirportCode}})
@@ -43,7 +44,7 @@
 
       </tr>
       <tr *ngFor="let quantity of FlightCustomerDetails().controls; let i=index" [formGroupName]="i">
-        <td> <input type="text" formControlName="Name" class="form-control"></td>
+        <td> <input type="text" formControlName="PassengerName" class="form-control"></td>
         <td> <input type="text" formControlName="Age" class="form-control"></td>
         <td>
        <select class="form-select" aria-label="Default select example" formControlName="Gender">

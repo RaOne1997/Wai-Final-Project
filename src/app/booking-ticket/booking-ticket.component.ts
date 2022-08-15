@@ -12,22 +12,16 @@ import { BookingFlightService } from '../Services/booking-flight.service';
 export class BookingTicketComponent implements OnInit {
 
   constructor(private bookservic: BookingFlightService, private route: ActivatedRoute) { }
-  flightBooking!:FlightBooking[]
+  flightBooking!: FlightBooking
   ngOnInit(): void {
-debugger
-    this.route.params.subscribe(
-      (parameters) => {
-        console.log(parameters['ID'])
-        // this.bookservic.Getbyflight(Number(parameters['ID'])).subscribe({
-        //   next: (result) => {
-        //          this.flightBooking =result
-        //     console.log(this.flightBooking)
-        //   }
-        // })
-      });
+    debugger
 
-
-
+    this.bookservic.GetBookingrecord().subscribe({
+      next: (result) => {
+          this.flightBooking=result
+        console.log(result)
+      }
+    })
   }
 
 }

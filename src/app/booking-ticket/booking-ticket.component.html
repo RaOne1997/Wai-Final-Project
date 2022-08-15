@@ -11,19 +11,19 @@
 </head>
 
 <body>
-  <div class="card " *ngFor="let flightBookings of flightBooking">
+  <div class="card " >
     <div class="card-header">
       <div class="row">
         <div class="col-4 airportcode mt-2">
-          {{flightBookings.fromAirportCode}} <br>
+          {{flightBooking.fromAirportCode}} <br>
         </div>
         <div class="col-4">
-          <small>{{flightBookings.arrivalDate | date :'shortTime'}}</small>
+          <small>{{flightBooking.arrivalDate | date :'shortTime'}}</small>
           -------------------
-          <small>{{flightBookings.departureDate | date :'shortTime'}}</small>
+          <small>{{flightBooking.departureDate | date :'shortTime'}}</small>
         </div>
         <div class="col-4 mt-2">
-          {{flightBookings.toAirportCode}} <br>
+          {{flightBooking.toAirportCode}} <br>
         </div>
       </div>
     </div>
@@ -36,27 +36,27 @@
         <tbody>
           <tr>
             <th>BookingTime</th>
-            <td>{{flightBookings.bookingTimeStamp }}</td>
+            <td>{{flightBooking.bookingTimeStamp }}</td>
             <th>BookingEmail</th>
-            <td>{{flightBookings.customerContactEmail}}</td>
+            <td>{{flightBooking.customerContactEmail}}</td>
             <th>BookingMobile</th>
-            <td>{{flightBookings.customerContactMobile}}</td>
+            <td>{{flightBooking.customerContactMobile}}</td>
             <th>FlightCode</th>
-            <td>{{flightBookings.flightCode}}</td>
+            <td>{{flightBooking.flightCode}}</td>
           </tr>
           <tr>
             <th>Number of Passenger</th>
-            <td>{{flightBookings.passengerNameRecord}}</td>
+            <td>{{flightBooking.passengerNameRecord}}</td>
             <th>Bording Airport </th>
-            <td>{{flightBookings.toairport}}
+            <td>{{flightBooking.fromairport}}
               <br>
-              ({{flightBookings.toAirportCode}})
+              ({{flightBooking.fromAirportCode}})
             </td>
 
 
             <th> Drop Airport</th>
-            <td>{{flightBookings.fromairport}}<br>
-              ({{flightBookings.fromAirportCode}})
+            <td>{{flightBooking.toairport}}<br>
+              ({{flightBooking.toAirportCode}})
             </td>
 
           </tr>
@@ -70,22 +70,9 @@
           <th>Age </th>
           <th>Gender</th>
         </thead>
-        <tbody *ngFor="let passenger of flightBookings.flightCustomerDetails; let indexOfelement=index">
+        <tbody *ngFor="let passenger of flightBooking.flightCustomerDetails; let indexOfelement=index">
           <tr>
-            <!-- <td>
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Action
-                </button>
-                <ul class="dropdown-menu text-center">
-                  <li><span class="btn w-100" >Edit</span></li>
-                  <li><span class="btn   w-100"  >Edit</span></li>
-                  <li><span class="btn  w-100">Edit</span></li>
-                 
-                              </ul>
-              </div>
-            </td> -->
+          
             <td>{{passenger.passengerName}}</td>
             <td>{{passenger.age}}</td>
             <td>{{passenger.gender}}</td>
@@ -101,3 +88,5 @@
 </body>
 
 </html>
+
+Booking COnform

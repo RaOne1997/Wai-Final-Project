@@ -16,10 +16,17 @@ export class BookingFlightService {
   Getallrecord():Observable<FlightBooking[]>{
     return this.http.get<FlightBooking[]>(this.baseApiUrl+'/api/FlightBookingDTOes')
   }
-
+  GetBookingrecord():Observable<FlightBooking>{
+    return this.http.get<FlightBooking>(this.baseApiUrl+'/api/FlightBookingDTOes/GetFlightBookingDTO')
+  }
   Getbyflight(id:number):Observable<bookinginput>{
     console.log("Servoices  : "+id)
     return this.http.get<bookinginput>(this.baseApiUrl+'/api/FlightBookingDTOes/GetFlighO/'+id)
   }
 
+  addbooking(bookinginfo:bookinginput):Observable<any>{
+
+    return this.http.post<any>(this.baseApiUrl+'/api/FlightBookingDTOes/PostFlightBookingDTO',bookinginfo)
+  }
+  
 }
