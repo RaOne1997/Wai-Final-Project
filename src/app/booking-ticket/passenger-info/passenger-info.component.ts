@@ -76,7 +76,6 @@ export class PassengerInfoComponent implements OnInit {
   onSubmit() {
 
     this.flightB = this.productForm.value
-
     this.bookservic.addbooking(this.flightB).subscribe({
       next: (result) => {
         console.log(result)

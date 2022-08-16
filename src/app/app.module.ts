@@ -1,10 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule }   from '@angular/forms';
+
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { ProductComponent } from './product/product.component';
@@ -24,6 +22,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
 import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
+import { LoginComponent } from './login/login.component';
+
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 
 
 @NgModule({
@@ -46,13 +51,18 @@ import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenge
     HeaderComponent,
     FooterComponent,
     BookingTicketComponent,
-    PassengerInfoComponent
+    PassengerInfoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      HttpClientModule,
-     FormsModule      ,ReactiveFormsModule,
+     FormsModule    
+       ,ReactiveFormsModule,
+       BrowserAnimationsModule,
+ 
+     ToastrModule.forRoot()
 
     
   

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+    logout(){
+      console.log("logout")
+      sessionStorage.setItem('loginstatur','false')
+      window.location.reload()  
+    }
+  
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { cityDto } from 'src/app/Models/City/cityDto';
 
@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { CityMaster } from 'src/app/Models/City/CityModels';
 import { Country } from 'src/app/Models/City/Country';
 import { Dropdown } from 'src/app/Models/City/Dropdown';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
