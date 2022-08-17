@@ -22,13 +22,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
 import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './Account/login/login.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { SignUpComponent } from './Account/sign-up/sign-up.component';
+import { UserinformationComponent } from './Account/userinformation/userinformation.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { NgModule } from '@angular/core';
     FooterComponent,
     BookingTicketComponent,
     PassengerInfoComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent,
+    UserinformationComponent
   ],
   imports: [
     BrowserModule,

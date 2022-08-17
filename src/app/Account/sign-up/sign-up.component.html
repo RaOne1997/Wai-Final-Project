@@ -5,7 +5,7 @@
                 <img src="../../assets/Images/bg.jpg" class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form  #form="ngForm" (ngSubmit)="regristration()">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                         <p class="lead fw-normal mb-0 me-3">Sign in with</p>
                         <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -24,36 +24,48 @@
                     <div class="divider d-flex align-items-center my-4">
                         <p class="text-center fw-bold mx-3 mb-0">Or</p>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-outline mb-4">
+                                <input type="text" #user name="userName" [(ngModel)]="productForm.userName" class="form-control form-control-lg"
+                                    placeholder="Enter User Address"  />
+                                <label class="form-label" for="user">User Address</label>
+                            </div>
 
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" #user class="form-control form-control-lg"
-                            placeholder="Enter a valid email address" />
-                        <label class="form-label" for="user">Email address</label>
+
+                        </div>
+                        <div class="col">
+                            <div class="form-outline mb-4">
+                                <input type="number" #user name="phone" [(ngModel)]="phone" class="form-control form-control-lg num"
+                                    placeholder="Enter Mobile Number" />
+                                <label class="form-label" for="user">Mobile Nmber</label>
+                            </div>
+                        </div>
                     </div>
-
+                    <div class="form-outline mb-3">
+                        <input type="text" #email  name="email" (change)="emailvalidation(email.value)"  [(ngModel)]="productForm.email" class="form-control form-control-lg"
+                            placeholder="Enter Email" />
+                        <label class="form-label" for="pass">Email</label>
+                    </div>
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" #pass class="form-control form-control-lg"
-                            placeholder="Enter password" />
+                        <input type="password" #pass name="password"  [(ngModel)]="productForm.password" class="form-control form-control-lg"
+                            placeholder="Enter password"  (change)="passwordValidation(pass.value,confpass.value)" />
                         <label class="form-label" for="pass">Password</label>
                     </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                            <label class="form-check-label" for="form2Example3">
-                                Remember me
-                            </label>
-                        </div>
-                        <a href="#!" class="text-body">Forgot password?</a>
+                    <div class="form-outline mb-3">
+                        <input type="password" #confpass class="form-control form-control-lg"
+                            placeholder="Enter Conform password" (change)="passwordValidation(pass.value,confpass.value)" />
+                        <label class="form-label" for="pass"> Conform Password</label>
                     </div>
-
+                    <div [hidden]="isvalidet"  class="alert alert-danger" role="alert">
+                        {{this.message}}
+                      </div>
+                       
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn " (click)="login(user.value,pass.value)">Login</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                                class="link-danger">Register</a></p>
+                        <button type="submit" class="btn">Sign Up</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">have an account? <a  (click)="gotologin()"
+                                class="link-danger">Sign In</a></p>
                     </div>
 
                 </form>
@@ -62,10 +74,7 @@
     </div>
     <div
         class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <!-- Copyright 
-            
-            btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;"-->
+
         <div class="text-white mb-3 mb-md-0">
             Copyright © 2020. All rights reserved.
         </div>

@@ -50,7 +50,7 @@ export class RoomMasterComponent implements OnInit {
   
   AddRoom() {
 
-    debugger
+ 
     const formData: FormData = new FormData();
     formData.append('RoomImagesUplode', this.RoomImagesUplode);
     formData.append('RoomNumber',String(this.fileForm.value.RoomNumber));

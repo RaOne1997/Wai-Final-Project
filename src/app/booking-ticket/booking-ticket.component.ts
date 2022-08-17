@@ -14,7 +14,7 @@ export class BookingTicketComponent implements OnInit {
   constructor(private bookservic: BookingFlightService, private route: ActivatedRoute) { }
   flightBooking!: FlightBooking
   ngOnInit(): void {
-    debugger
+ 
 
     this.bookservic.GetBookingrecord().subscribe({
       next: (result) => {

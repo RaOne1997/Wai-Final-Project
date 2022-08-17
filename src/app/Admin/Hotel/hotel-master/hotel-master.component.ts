@@ -20,7 +20,7 @@ export class HotelMasterComponent implements OnInit {
   }
 
   getUsers() {
-    debugger
+ 
     this.hotelServices.getAllHotel()
       .subscribe({
         next: (Hotel) => {

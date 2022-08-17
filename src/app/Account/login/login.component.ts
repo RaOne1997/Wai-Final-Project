@@ -2,16 +2,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
-import { Account } from '../Services/AccountServices';
+import { Account } from '../../Services/AccountServices';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[Account]
 })
 export class LoginComponent implements OnInit {
 
   constructor(private accountservice:Account ,private toastr: ToastrService) {  
+    sessionStorage.setItem('signup',"false" )
    
   }  
 
@@ -42,6 +44,11 @@ export class LoginComponent implements OnInit {
     
     })
  
+  }
+  signup(){
+    sessionStorage.setItem('signup',"true" )
+    window. location. reload();
+
   }
 
 }

@@ -17,7 +17,7 @@ export class AboutUsComponent implements OnInit {
   }  
 
   ngOnInit(): void {
-    debugger
+ 
     this.accountservice.login("aaaa").subscribe({
 
       next:(result)=>{

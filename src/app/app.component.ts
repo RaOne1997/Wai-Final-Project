@@ -9,13 +9,19 @@ import { Component } from "@angular/core";
 export class AppComponent {
   title = 'TEst';
   statusdd:string='false'
+  signup:string ='false'
 
-  constructor(){
-    let a=  sessionStorage.getItem('loginstatur' )
-    if(a !== null){
-      this.statusdd=a
-      console.log(  this.statusdd)
+    constructor(){
+      let a=  sessionStorage.getItem('loginstatur' )
+      let b=sessionStorage.getItem('signup')
+      if(b!==null){
+
+        this.signup=b
+      }
+      if(a !== null){
+        this.statusdd=a
+        console.log(  this.statusdd)
+      }
     }
-  }
 
 }
