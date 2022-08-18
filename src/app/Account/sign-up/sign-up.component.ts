@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Regristration } from 'src/app/Models/Account/regrstration';
 import { Account } from 'src/app/Services/AccountServices';
@@ -22,9 +23,9 @@ export class SignUpComponent implements OnInit {
     id: 0,
 
   };
-  phone:number=0
+  phone: number = 0
   serchfind: boolean = true;
-  constructor(private toastr: ToastrService,private accountservice:Account) {
+  constructor(private toastr: ToastrService, private accountservice: Account) {
 
 
   }
@@ -65,19 +66,19 @@ export class SignUpComponent implements OnInit {
 
   }
   regristration() {
- 
+
     if (this.isvalidet == true && this.serchfind == true) {
-      this.productForm.phone= String(this.phone)
+      this.productForm.phone = String(this.phone)
       this.accountservice.signUp(this.productForm).subscribe({
-        next:(result)=>{
+        next: (result) => {
           sessionStorage.setItem('loginstatur',"true" )
+          sessionStorage.setItem('data', this.productForm.userName)
           this.toastr.success(this.productForm.userName, "ok")
-          window. location. reload();
-          console.log(result)
+          window.location.reload();
         }
-        
+
       })
- 
+
       console.log(this.productForm)
       return true
     }
@@ -88,9 +89,9 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  gotologin(){
-    sessionStorage.setItem('loginstatur',"false" )  
-    sessionStorage.setItem('signup',"false" )
-    window. location. reload();
+  gotologin() {
+    sessionStorage.setItem('loginstatur', "false")
+    sessionStorage.setItem('signup', "false")
+    window.location.reload();
   }
 }

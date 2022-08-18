@@ -17,6 +17,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProductComponent } from './product/product.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
 import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
+import { UserinformationComponent } from './Account/userinformation/userinformation.component';
 
 
 const routes: Routes = [
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path:'BookingTicket/:id',
     component:BookingTicketComponent
+  },
+  {
+    path:'Creating/:username',
+    component:UserinformationComponent
   }
   ];
 

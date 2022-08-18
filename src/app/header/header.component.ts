@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,16 @@ export class HeaderComponent implements OnInit {
       console.log("logout")
       sessionStorage.setItem('loginstatur','false')
       window.location.reload()  
+    }
+
+
+    userprofile(){
+
+     
+
+      this.route.navigate(['Creating/1'])
+
+      
     }
   
 }

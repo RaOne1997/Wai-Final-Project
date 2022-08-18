@@ -13,6 +13,7 @@ import { RoomServicesService } from 'src/app/Services/room-services.service';
 export class RoomMasterComponent implements OnInit {
 
   fileForm = new FormGroup({
+    
     description: new FormControl(''),
     RoomNumber: new FormControl(''),
     RoomTypeRefID: new FormControl(''),
@@ -52,6 +53,8 @@ export class RoomMasterComponent implements OnInit {
 
  
     const formData: FormData = new FormData();
+
+    
     formData.append('RoomImagesUplode', this.RoomImagesUplode);
     formData.append('RoomNumber',String(this.fileForm.value.RoomNumber));
     formData.append('description', String(this.fileForm.value.description));
