@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'TEst';
   statusdd:string='false'
   signup:string ='false'
@@ -17,10 +17,7 @@ export class AppComponent {
       let a=  sessionStorage.getItem('loginstatur' )
       let b=sessionStorage.getItem('signup')
    
-      this.hide = Boolean(localStorage.getItem('hide'))
-      if(this.hide!=null){
-        console.log(this.hide)
-      }
+     
       if(b!==null){
 
         this.signup=b
@@ -31,5 +28,11 @@ export class AppComponent {
         console.log(this.statusdd)
       }
     }
+  ngOnInit(): void {
+    this.hide = Boolean(localStorage.getItem('hide'))
+    if(this.hide!=null){
+      console.log(this.hide)
+    }
+  }
 
 }

@@ -8,23 +8,26 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() hide :boolean = false
+ hide :boolean = false
 a :number= 0
 
   constructor(private route: Router) { }
 
   
   ngOnInit(): void {
-     this.a = Number(localStorage.getItem('userogdata'))
-    if(this.a!=null){
-      console.log(this.a)
+
+
+     let a = Boolean(localStorage.getItem('userogdata'))
+    if(a!=null){
+      this.hide=a
+      console.log(this.hide)
     }
     
     console.log(this.hide)
   }
     logout(){
       console.log("logout")
-      sessionStorage.setItem('loginstatur',"false")
+      localStorage.removeItem('token')
       window. location. reload();
      
     }

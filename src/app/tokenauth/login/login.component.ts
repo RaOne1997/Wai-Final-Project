@@ -19,14 +19,14 @@ export class LoginComponenttokde implements OnInit {
 
 
 
-  constructor(private service: TokenloginService, private router: Router) { 
+  constructor(private service: TokenloginService, private router: Router) 
+  { 
+    localStorage.setItem('hide', '0')
     
   }
 
   ngOnInit(): void {
   }
-
-
 
   login(object: NgForm) {
     this.service.login(object.value).subscribe({
@@ -42,9 +42,7 @@ export class LoginComponenttokde implements OnInit {
       }
     }
     )
-
   }
-
   reg(value:boolean){
     this.newItemEvent.emit(value);
   }
