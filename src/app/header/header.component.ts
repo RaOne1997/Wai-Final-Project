@@ -16,11 +16,13 @@ a :number= 0
   
   ngOnInit(): void {
 
+    this.hide = Boolean(localStorage.getItem('hide'))
 
-     let a = Boolean(localStorage.getItem('userogdata'))
-    if(a!=null){
-      this.hide=a
       console.log(this.hide)
+
+     this.a = Number(localStorage.getItem('userogdata'))
+    if(this.a!=null){
+      console.log(this.a)
     }
     
     console.log(this.hide)
