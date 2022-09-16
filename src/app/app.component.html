@@ -1,11 +1,11 @@
-<div *ngIf="statusdd == 'true'; else elseBlock"> 
+<!-- <div *ngIf="statusdd == 'true'; else elseBlock"> 
      <app-header></app-header>
     <router-outlet></router-outlet>
     <app-footer></app-footer> 
  </div>
 <ng-template #elseBlock>
     <div *ngIf="signup =='false' ; else elsesignup">
-        <app-login></app-login>
+         <app-login></app-login> 
     </div>
     
     <ng-template #elsesignup>
@@ -13,4 +13,10 @@
         <app-sign-up></app-sign-up>
     </ng-template>
 </ng-template>
+ -->
 
+ <!-- <app-login-tok></app-login-tok> -->
+ <!-- <app-home-token></app-home-token> -->
+ <app-header [hide]="hide" ></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer> 

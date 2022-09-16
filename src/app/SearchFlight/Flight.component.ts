@@ -11,30 +11,34 @@ import { Citymasterservices } from '../Services/CityMasterservices';
   styleUrls: ['./Fight.component.css']
 })
 export class FlightComponent implements OnInit {
-
-  // @Input()
   flights!: Searchflightresult[]
+  currentMsgToParent: any
 
+  constructor(private bookService: Citymasterservices, private activatedRoute: ActivatedRoute, private route: Router) {
+    let a = this.route.getCurrentNavigation();
+    if (a != null) {
 
+      this.currentMsgToParent = a.extras.state;
 
-  constructor(private bookService: Citymasterservices, private activatedRoute: ActivatedRoute,private route: Router) {}
+      // this.currentMsgToParent.FlightSearch.queryParams
+      this.flights=  this.currentMsgToParent.FlightSearch.queryParams
+    }
+  }
 
 
   ngOnInit(): void {
 
-    let a = sessionStorage.getItem('recor');
-    if (a !== null)
-      this.flights = JSON.parse(a)
-      window.onunload = function () {
-        sessionStorage.removeItem('recor');
-      }
+    // let a = sessionStorage.getItem('recor');
+    // if (a !== null)
+    //   this.flights = JSON.parse(a)
+    // window.onunload = function () {
+    //   sessionStorage.removeItem('recor');
+    // }
 
   }
-  displayid(id:number){
-    this.route.navigate(['FlightBooking/'+id]);
+  displayid(id: number) {
+    this.route.navigate(['FlightBooking/' + id]);
     console.log(id);
-
-
   }
 
 }

@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Customer } from 'src/app/Models/Account/Usser';
 
 import { Account } from '../../Services/AccountServices';
 
@@ -12,8 +14,10 @@ import { Account } from '../../Services/AccountServices';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private accountservice:Account ,private toastr: ToastrService) {  
-    sessionStorage.setItem('signup',"false" )
+  customers!:Customer
+  constructor(private accountservice:Account ,private toastr: ToastrService,private route:Router) {  
+    sessionStorage.setItem('signup',"false" )  
+    localStorage.removeItem('userogdata')
    
   }  
 
@@ -29,15 +33,19 @@ export class LoginComponent implements OnInit {
        if(result==null)
        {
         sessionStorage.setItem('loginstatur',"false" )
-        this.toastr.error("fail to login", "error")
+              this.toastr.error("fail to login", "error")
         
        }
        else{
-        sessionStorage.setItem('loginstatur',"true" )
-        this.toastr.success("Welcome", "ok")
-        
-        window. location. reload();
+        console.log(result)
 
+       
+        sessionStorage.setItem('loginstatur',"true" )
+        this.route.navigate([''])
+        localStorage.setItem('userogdata', result)
+        window. location. reload();
+        // this.toastr.success("Welcome", "ok")
+        
        }
       }
     

@@ -1,5 +1,5 @@
 import { Component,  OnInit } from '@angular/core';
-import {  Router } from '@angular/router';
+import {  NavigationExtras, Router } from '@angular/router';
 import { Searchflightresult } from '../Models/serchflight';
 import { FlightSearch } from '../Services/SearchFlight';
 
@@ -26,10 +26,18 @@ export class HomepageComponent implements OnInit {
 
     this.search.getsearchFlight(from, to, dept).subscribe({
       next: (result) => {
-        this.searchflig = result
-        sessionStorage.setItem('recor', JSON.stringify(this.searchflig))
+         this.searchflig = result
+        // sessionStorage.setItem('recor', JSON.stringify(this.searchflig))
 
-        this.route.navigate(['Flight']);
+        let objToSend: NavigationExtras = {
+          queryParams:this.searchflig
+      
+            
+          }
+        this.route.navigate(['Flight']
+        , { 
+          state: { FlightSearch: objToSend }
+        });
 
       }
     })
