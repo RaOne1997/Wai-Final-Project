@@ -81,7 +81,7 @@ export class PassengerInfoComponent implements OnInit {
         console.log(result)
       }
     });
-    this.routes.navigate(['BookingTicket/1']);
+    this.routes.navigate(['BookingTicket']);
 
   }
 

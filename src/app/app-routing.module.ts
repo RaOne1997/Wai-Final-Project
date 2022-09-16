@@ -18,69 +18,91 @@ import { ProductComponent } from './product/product.component';
 import { BookingTicketComponent } from './booking-ticket/booking-ticket.component';
 import { PassengerInfoComponent } from './booking-ticket/passenger-info/passenger-info.component';
 import { UserinformationComponent } from './Account/userinformation/userinformation.component';
+import { UserComponent } from './tokenauth/user/user.component';
+import { LoginComponenttokde } from './tokenauth/login/login.component';
+import { RegristrationComponent } from './tokenauth/regristration/regristration.component';
+import { HomeComponenttoken } from './tokenauth/home/home.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AccountcontaintComponent } from './tokenauth/accountcontaint/accountcontaint.component';
 
 
 const routes: Routes = [
+
+  {path:'',redirectTo:'/user/provi',pathMatch:'full'},
   {
-    path:'',
-    component:HomepageComponent
+    path: 'user', component: UserComponent,
+    children: [
+      { path: 'registration', component: RegristrationComponent },
+      { path: 'login', component: LoginComponenttokde },
+      {path:'provi',component:AccountcontaintComponent}
+    ]
   },
 
-  {
-    path:'ContactUs',
-    component:ContactpageComponent
-  },
-  {
-    path:'Product',
-    component:ProductComponent
-  },
-  {
-    path:'AboutUs',
-    component:AboutUsComponent
-  },
-  {
-    path:'Flight',
-    component:FlightComponent
-  },
-  {
-    path:'CityMaster',
-    component:CityMasterComponent , children: [
-      { path: 'detail/:id', component: CityMasterDetailsComponent }
-   ],
-  },
-  {
-    path:'Room',
-    component:RoomMasterComponent 
+{path:'Home',component:HomeComponenttoken,canActivate:[AuthGuard]}
+
+
+
+  // {
+  //   path:'aa',
+  //   component:HomepageComponent
+  // },
+
+  // {
+  //   path:'ContactUs',
+  //   component:ContactpageComponent
+  // },
+  // {
+  //   path:'Product',
+  //   component:ProductComponent
+  // },
+  // {
+  //   path:'AboutUs',
+  //   component:AboutUsComponent
+  // },
+  // {
+  //   path:'Flight',
+  //   component:FlightComponent
+  // },
+  // {
+  //   path:'CityMaster',
+  //   component:CityMasterComponent , children: [
+  //     { path: 'detail/:id', component: CityMasterDetailsComponent }
+  //  ],
+  // },
+  // {
+  //   path:'Room',
+  //   component:RoomMasterComponent 
    
-  },
-  {
-    path:'roomdetails/:id',
-    component:RoomDetailComponent
-  },
-  {
-    path:'Hotel',
-    component:HotelMasterComponent
-  },
-  {
-    path:'Roombyhotel',
-    component:RoombyhotelComponent
-  },
-  {
-    path:'FlightBooking/:ID',
-    component:PassengerInfoComponent
-  },
-  {
-    path:'BookingTicket/:id',
-    component:BookingTicketComponent
-  },
-  {
-    path:'Creating/:username',
-    component:UserinformationComponent
-  }
+  // },
+  // {
+  //   path:'roomdetails/:id',
+  //   component:RoomDetailComponent
+  // },
+  // {
+  //   path:'Hotel',
+  //   component:HotelMasterComponent
+  // },
+  // {
+  //   path:'Roombyhotel',
+  //   component:RoombyhotelComponent
+  // },
+  // {
+  //   path:'FlightBooking/:ID',
+  //   component:PassengerInfoComponent
+  // },
+  // {
+  //   path:'BookingTicket',
+  //   component:BookingTicketComponent
+  // },
+  // {
+  //   path:'Creating/:id',
+  //   component:UserinformationComponent
+  // }
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)]
+  ,
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,12 +1,14 @@
 <div class="container rounded bg-white mt-5 mb-5">
-        <form [formGroup]="fileForm">
+        <!-- <form [formGroup]="fileForm"> -->
+
+                <form  #form="ngForm" >
                 <div class="row">
                         <div class="col-md-3 border-right">
                                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-
+                                  
                                         <label for="upload">
-                                                <img class="rounded-circle mt-5" width="150px"
-                                                        src="{{'data:image/jpeg;base64,}}"> 
+                                                <img class="rounded-circle mt-5" width="150px"  alt="noimage"
+                                                        [src]="displayProfileImageUrl"> 
 
                                         </label> 
                                         <input type="file" id="upload" (change)="handleFileInput($event)" style="display:none" name="ProfilePhotoTouplode">
@@ -22,18 +24,20 @@
                                         </div>
                                         <div class="row mt-2">
                                                 <div class="col-md-6"><label class="labels required">Name </label><input
-                                                                type="text" #FirstName
-                                                                (change)="fullnamedisplay(FirstName.value,lastName.value)"
-                                                                class="form-control " placeholder="first name"
-                                                                formControlName="firstName" value=""></div>
+                                                                type="text" 
+                                                         
+                                                                class="form-control " placeholder="first name" id="firstName"  name="firstName"
+                                                                 [(ngModel)]="customer.firstName"
+                                                                
+                                                                 value=""></div>
                                                 <div class="col-md-6"><label
                                                                 class="labels required">Surname</label><input
-                                                                type="text" #lastName
-                                                                (change)="fullnamedisplay(FirstName.value,lastName.value)"
-                                                                class="form-control" formControlName="lastName" value=""
+                                                                type="text" 
+                                                               
+                                                                class="form-control"  name="lastName" [(ngModel)]="customer.lastName" value=""
                                                                 placeholder="surname"></div>
                                         </div>
-
+                                        <!-- (change)="fullnamedisplay(firstName.value,lastName.value)" -->
                                         <div class="row mt-3">
                                                 <div class="row">
                                                         <div class="col">
@@ -42,23 +46,23 @@
                                                                                 Birth</label><input type="date"
                                                                                 class="form-control"
                                                                                 placeholder="education"
-                                                                                formControlName="dateOfBirth" value="">
+                                                                                 name="dateOfBirth" [(ngModel)]="customer.dateOfBirth" value="">
                                                                 </div>
                                                         </div>
                                                         <div class="col ">
 
                                                                 <div class="form-check form-check-inline mt-4">
-                                                                        <input class="form-check-input " type="radio"
-                                                                                name="Gender" formControlName=""
-                                                                                id="Male">
+                                                                        <input class="form-check-input "  [(ngModel)]="customer.gender" type="radio"
+                                                                                name="Gender" 
+                                                                                id="Male" value='M'>
                                                                         <label class="form-check-label required"
-                                                                                formControlName="" for="Male">
+                                                                                 for="Male">
                                                                                 Male
                                                                         </label>
                                                                 </div>
                                                                 <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio"
-                                                                                name="Gender" id="Female" checked>
+                                                                        <input class="form-check-input"  [(ngModel)]="customer.gender" type="radio"
+                                                                                name="Gender" id="Female" value='F'>
                                                                         <label class="form-check-label  required"
                                                                                 for="Female">
                                                                                 Female
@@ -75,27 +79,27 @@
                                                 <div class="col-md-12"><label class="labels required">Mobile
                                                                 Number</label><input type="text" class="form-control"
                                                                 placeholder="enter phone number"
-                                                                formControlName="telephone1" value="">
+                                                                 name="telephone1" [(ngModel)]="customer.telephone1" value="">
                                                 </div>
                                                 <div class="col-md-12"><label class="labels required ">Address Line
                                                                 1</label><input type="text" class="form-control"
                                                                 placeholder="enter address line 1"
-                                                                formControlName="address1" value="">
+                                                                 name="address1" [(ngModel)]="customer.address1" value="">
                                                 </div>
                                                 <div class="col-md-12"><label class="labels">Address Line
                                                                 2</label><input type="text" class="form-control"
                                                                 placeholder="enter address line 2"
-                                                                formControlName="address2" value="">
+                                                                 name="address2" [(ngModel)]="customer.address2" value="">
                                                 </div>
 
                                                 <div class="col-md-12"><label class="labels">Address 3</label><input
                                                                 type="text" class="form-control"
                                                                 placeholder="enter address line 2"
-                                                                formControlName="address3" value=""></div>
+                                                                 name="address3" [(ngModel)]="customer.address3" value=""></div>
 
                                                 <div class="col-md-12"><label class="labels required">Email
                                                                 ID</label><input type="text" class="form-control"
-                                                                placeholder="enter email id" formControlName="email1"
+                                                                placeholder="enter email id"  name="email1" [(ngModel)]="customer.email1"
                                                                 value=""></div>
 
 
@@ -104,7 +108,7 @@
                                         <div class="row mt-3">
                                                 <div class="col-md-6"><label class="labels required">Country</label>
                                                         <select class="form-select" aria-label="Default select example"
-                                                                formControlName="countryRefId">
+                                                                 name="countryRefId" [(ngModel)]="customer.countryRefId">
                                                                 <option selected>Open this select menu</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -115,7 +119,7 @@
                                                 <div class="col-md-6"><label
                                                                 class="labels required">State/Region</label>
                                                         <select class="form-select" aria-label="Default select example"
-                                                                formControlName="stateRefId">
+                                                                 name="stateRefId" [(ngModel)]="customer.stateRefId">
                                                                 <option selected>Open this select menu</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -129,11 +133,11 @@
                                                                 class="labels required">Postcode</label><input
                                                                 type="text" class="form-control"
                                                                 placeholder="enter address line 2"
-                                                                formControlName="pinCode" value=""></div>
+                                                                 name="pinCode" [(ngModel)]="customer.pinCode" value=""></div>
 
                                                 <div class="col-md-6"><label class="labels required">City</label>
                                                         <select class="form-select" aria-label="Default select example"
-                                                                formControlName="cityRefId">
+                                                                 name="cityRefId" [(ngModel)]="customer.cityRefId">
                                                                 <option selected>Open this select menu</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
